@@ -55,3 +55,6 @@ body{background-color:var(--bg);background-image:radial-gradient(ellipse at 82% 
 @media(max-width:900px){.hero-meta{grid-template-columns:1fr 130px 1fr;min-height:130px;gap:12px}.brand-intro{width:125px}.award-symbol.brand-mark{display:block;width:88px}}
 @media(max-width:600px){.hero-meta{grid-template-columns:1fr 100px 1fr;min-height:100px;gap:4px;font-size:9px;letter-spacing:1.5px}.brand-intro{width:100px}.hero-meta>span:last-child{display:block}.hero-copy{margin-top:28px}.award-symbol.brand-mark{position:static;float:right;width:76px;margin:0 0 10px 14px}}
 html[data-motion="calm"] .brand-rain{display:none}
+
+/* Level signature; a slightly higher placement above the hero. */
+.brand-intro{transform:translateY(-12px)}.brand-intro .mark-facets{animation-name:mark-arrive-straight}@keyframes mark-arrive-straight{from{opacity:.1;transform:translateY(-8px) scale(.86)}to{opacity:1;transform:translateY(0) scale(1)}}@media(max-width:600px){.brand-intro{transform:translateY(-8px)}}
