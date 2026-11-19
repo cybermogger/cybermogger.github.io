@@ -3,7 +3,7 @@ let motionEnabled=true;
 try{motionEnabled=localStorage.getItem('cybermogger-motion')!=='off'}catch{}
 root.dataset.motion=motionEnabled?'full':'calm';
 root.classList.add('js');
-const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');if(motionEnabled)entry.target.classList.add('reveal-enter');observer.unobserve(entry.target)}}),{threshold:0,rootMargin:'0px 0px 160px 0px'});
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');if(motionEnabled)entry.target.classList.add('reveal-enter');observer.unobserve(entry.target)}}),{threshold:.01,rootMargin:'0px 0px -24px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{
  document.querySelectorAll('[data-filter]').forEach(el=>{el.classList.toggle('active',el===button);el.setAttribute('aria-pressed',String(el===button))});

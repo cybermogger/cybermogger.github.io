@@ -20,3 +20,6 @@ body{background-color:var(--bg);background-image:radial-gradient(ellipse at 82% 
 
 /* Scroll without full-screen repaint or invisible waiting cards. */
 .progress{width:100%;transform:scaleX(0);transform-origin:left;will-change:transform}.ticker div{will-change:transform}.preview img{aspect-ratio:8 / 5}.motion-toggle{backdrop-filter:none;background:#080e1df5}@media(hover:none),(pointer:coarse){body{background-attachment:scroll}.section-head h2 em{animation:none}.magnetic{will-change:auto}.hero::before{box-shadow:inset -20px -24px 55px #000,inset 8px 8px 35px #8ab34515}}
+
+/* Start the project entrance inside the viewport, not before it. */
+.js .project.reveal-enter{animation:project-entry .48s cubic-bezier(.2,.65,.3,1) both}@keyframes project-entry{from{opacity:.16;transform:translate3d(0,24px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
