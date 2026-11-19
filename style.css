@@ -38,3 +38,20 @@ body{background-color:var(--bg);background-image:radial-gradient(ellipse at 82% 
 @keyframes seamless-ticker{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
 @media(max-width:900px){.preview,.preview.demo-preview{height:auto;padding:16px 16px 14px}}
 @media(max-width:600px){.preview,.preview.demo-preview{height:auto;padding:12px}.windowbar{font-size:8px;padding:8px 10px;min-height:30px}.preview .preview-cta{margin-top:12px;font-size:13px;padding:8px 15px}.hero-proof{bottom:76px}.hero-footer{bottom:30px}.motion-toggle{font-size:12px}}
+
+/* Faceted signature, with a quiet rain sheen. */
+.hero-meta{display:grid;grid-template-columns:1fr 180px 1fr;align-items:center;gap:24px;min-height:155px}
+.hero-meta>span:first-child{text-align:left}.hero-meta>span:last-child{text-align:right;display:block}
+.brand-mark{display:block;line-height:0}.triangle-mark{width:100%;height:auto;overflow:visible;filter:drop-shadow(0 12px 12px #0006)}
+.brand-intro{width:160px;justify-self:center;perspective:700px}
+.brand-intro .mark-facets{transform-origin:50% 55%;animation:mark-arrive 1.25s cubic-bezier(.18,.7,.3,1) both}
+.brand-intro .facet{transform-box:fill-box;transform-origin:center;animation:facet-assemble 1.2s cubic-bezier(.16,.8,.25,1) both}
+.brand-intro .facet-blue{--facet-x:-16px;--facet-y:-12px}.brand-intro .facet-violet{--facet-x:16px;--facet-y:-10px}.brand-intro .facet-gray{--facet-x:0px;--facet-y:18px}
+.brand-rain{opacity:.3}.brand-rain line{animation:mark-rain var(--rain-speed,2s) linear infinite;animation-delay:var(--rain-delay,0s)}
+.award-symbol.brand-mark{width:112px;height:auto;font-size:inherit;animation:none;top:45px;right:12px}
+@keyframes mark-arrive{from{opacity:.1;transform:translateY(-8px) scale(.86) rotate(-7deg)}to{opacity:1;transform:translateY(0) scale(1) rotate(0)}}
+@keyframes facet-assemble{from{transform:translate(var(--facet-x),var(--facet-y));opacity:.2}to{transform:translate(0,0);opacity:1}}
+@keyframes mark-rain{from{stroke-dashoffset:0}to{stroke-dashoffset:-160}}
+@media(max-width:900px){.hero-meta{grid-template-columns:1fr 130px 1fr;min-height:130px;gap:12px}.brand-intro{width:125px}.award-symbol.brand-mark{display:block;width:88px}}
+@media(max-width:600px){.hero-meta{grid-template-columns:1fr 100px 1fr;min-height:100px;gap:4px;font-size:9px;letter-spacing:1.5px}.brand-intro{width:100px}.hero-meta>span:last-child{display:block}.hero-copy{margin-top:28px}.award-symbol.brand-mark{position:static;float:right;width:76px;margin:0 0 10px 14px}}
+html[data-motion="calm"] .brand-rain{display:none}

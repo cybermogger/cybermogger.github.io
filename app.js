@@ -47,4 +47,4 @@ function updateMotionControl(){motionToggle.textContent=motionEnabled?'Аним�
 motionToggle.addEventListener('click',()=>{motionEnabled=!motionEnabled;root.dataset.motion=motionEnabled?'full':'calm';try{localStorage.setItem('cybermogger-motion',motionEnabled?'on':'off')}catch{}document.querySelectorAll('.tilt,.magnetic').forEach(el=>el.style.transform='');updateMotionControl();syncAnimation()});
 updateMotionControl();syncAnimation();
 
-const ambientObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{entry.target.style.animationPlayState=entry.isIntersecting?'running':'paused'}));document.querySelectorAll('.ticker div,.award-symbol,.section-head h2 em').forEach(el=>ambientObserver.observe(el));
+const ambientObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{entry.target.style.animationPlayState=entry.isIntersecting?'running':'paused'}));document.querySelectorAll('.ticker div,.brand-rain line,.section-head h2 em').forEach(el=>ambientObserver.observe(el));
